@@ -106,7 +106,7 @@ void Display() {
 		}
 		cout << "\n";
 	}
-	system("cls");
+	
 	cout << flush;
 }
 
@@ -118,7 +118,7 @@ void Pause() {
 	{
 		if (Pos == 0) 
 		{
-			for (int x = 0; x < 19; ++x) 
+			for (int x = 0; x < 20; ++x) 
 			{
 				for (int y = 0; y < 11; ++y) 
 				{
@@ -135,7 +135,7 @@ void Pause() {
 		}
 
 		else if (Pos == 1) {
-			for (int x = 0; x < 19; ++x)
+			for (int x = 0; x < 20; ++x)
 			{
 				for (int y = 0; y < 11; ++y)
 				{
@@ -151,7 +151,7 @@ void Pause() {
 		
 		}
 		else if (Pos == 2) {
-			for (int x = 0; x < 19; ++x)
+			for (int x = 0; x < 20; ++x)
 			{
 				for (int y = 0; y < 11; ++y)
 				{
@@ -183,6 +183,7 @@ int main(){
 	
 	while (!Game)
 	{
+		system("cls");
 		Display();
 
 		switch (_getch())
