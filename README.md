@@ -1,3 +1,6 @@
 # Console_doodle
-## une carte
 Console old Games
+
+## une carte
+* Mine Sweeper  
+* Pong(solo)
