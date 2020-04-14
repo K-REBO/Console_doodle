@@ -14,13 +14,13 @@
 using namespace std;
 
 
-#define X_field (12)
-#define Y_field (12)
+#define X_field (16)
+#define Y_field (10)
 
 bool Game = false;//true (Game Over)  false (Game)
 
-int X_Pong = 5,Y_Pong = 5;
-int X_Bar = 5,Y_Bar = 9;
+int X_Pong = X_field / 2,Y_Pong = Y_field / 2;
+int X_Bar = X_field / 2,Y_Bar = Y_field - 2;
 int Pong_Cursor = 4;
 int Pong_state = 0;
 
@@ -165,10 +165,11 @@ int main()
         mvaddch(Y_Bar,X_Bar    ,' ');
         mvaddch(Y_Bar,X_Bar + 1,' ');
         
-    
+
         Test(c);
         PongCD();
         Input(c);
+        
         
         switch (Pong_Cursor)
         {
@@ -198,7 +199,12 @@ int main()
         if(Game)
         {
             erase();
-            mvaddstr(5,5,"Game Over");
+            mvaddch(0,0,'+');
+            mvaddch(0,X_field,'+');
+            mvaddch(Y_field,0,'+');
+            mvaddch(Y_field,X_field,'+');
+            mvaddstr(Y_field / 2,X_field / 2,"Game Over");
+            getch();
             break;
         }
     }
