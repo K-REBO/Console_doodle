@@ -18,9 +18,11 @@ using namespace std;
 #define Y_field (10)
 
 bool Game = false;//true (Game Over)  false (Game)
+bool Menu = false;//true (Display Menu) false(Play Game)
+
 
 int X_Pong = X_field / 2,Y_Pong = Y_field / 2;
-int X_Bar = X_field / 2,Y_Bar = Y_field - 2;
+int X_Bar = X_field / 2,Y_Bar = Y_field - 1;
 int Pong_Cursor = 4;
 int Pong_state = 0;
 
@@ -64,6 +66,7 @@ void Test(char x)
         case 'A':X_Pong--;break;
         case 'D':X_Pong++;break;
         case 'S':Y_Pong++;break;
+        case ' ':Menu = true;break;
         default:          break;
     }
 }
@@ -71,7 +74,7 @@ void Test(char x)
 void PongCD()//Collid Detection Pong and Wall and Bar
 {
     //Left Wall
-    if(X_Pong == 1)
+    if(X_Pong <= 1)
         switch (Pong_Cursor)
         {
         case DL:Pong_Cursor = UR;break;
@@ -81,7 +84,7 @@ void PongCD()//Collid Detection Pong and Wall and Bar
         }
 
     //Upper Wall
-    else if(Y_Pong == 1)
+    else if(Y_Pong <= 1)
         switch(Pong_Cursor)
         {
             case UR:Pong_Cursor = DR;break;
@@ -90,11 +93,11 @@ void PongCD()//Collid Detection Pong and Wall and Bar
             default:                 break;
         }
     //Downer Wall
-    else if(Y_Pong == Y_field - 1)
+    else if(Y_Pong >= Y_field - 1)
         Game = true;
 
     //Right Wall
-    else if(X_Pong == X_field - 1)
+    else if(X_Pong >= X_field - 1)
         switch(Pong_Cursor)
         {
             case DR:Pong_Cursor = UL;break;
@@ -195,21 +198,23 @@ int main()
         mvaddch(Y_Bar,X_Bar + 1,'=');
 
         
-        wrefresh(win);
-        if(Game)
+        
+        if(Game)//Game Over
         {
             erase();
-            mvaddch(0,0,'+');
-            mvaddch(0,X_field,'+');
-            mvaddch(Y_field,0,'+');
-            mvaddch(Y_field,X_field,'+');
-            mvaddstr(Y_field / 2,X_field / 2,"Game Over");
+            
+            mvaddstr(Y_field / 2,X_field / 2 - 5,"Game Over");
+            timeout(-1);
             getch();
             break;
         }
+        
+        wrefresh(win);
     }
     wclear(win);
     wrefresh(win);
     endwin();
 
 }
+
+
