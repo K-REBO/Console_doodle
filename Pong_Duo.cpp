@@ -1,16 +1,16 @@
 #include<ncurses.h>
+#include<unistd.h>
 using namespace std;
 
-#define  X_field (20)//四で割れる
+#define  X_field (40)//四で割れる
 #define  Y_field (16)
 
-
-bool Game = false;//false (In Game)   true (Game over)
 int  Winner = 0;//0 (In Game)   1 (1P Winner)   2(2P Winner)
 bool Turn = false;// false (2P's turn)    ture (1P's turn)
 
 int a = 0;
 
+int WinPoint = 10;//First to get WinPoint is Winner
 
 int Score_1 = 0;
 int Score_2 = 0;
@@ -42,16 +42,24 @@ void Input(char c)
     if(Turn)
         switch (c)
         {
-            case 'a':Y1Bar++;break;
-            case 'd':Y1Bar--;break;
+            case 'a':
+                if(Y1Bar + 1 < Y_field  - 1)
+                    Y1Bar++;break;
+            case 'd':
+                if(Y1Bar - 1 > 1)
+                    Y1Bar--;break;
             default:break;
         }
     
     else
         switch (c)
         {
-            case 'j':Y2Bar++;break;
-            case 'l':Y2Bar--;break;
+            case 'j':
+                if(Y2Bar + 1 < Y_field - 1)
+                    Y2Bar++;break;
+            case 'l':
+                if(Y2Bar - 1 > 1)
+                    Y2Bar--;break;
             default:break;
         }
     
@@ -65,7 +73,7 @@ void PongCD()//Collid Detection Pong and wall and Bar
         Score_1++;
         X_Pong = X_field / 2;
         Y_Pong = Y_field / 2;
-        Pong_Cursor = (Turn?6:2);
+        Pong_Cursor = (Turn?2:6);
     }
     //Upper Wall
     else if(Y_Pong <= 1)
@@ -82,7 +90,7 @@ void PongCD()//Collid Detection Pong and wall and Bar
         Score_2++;
         X_Pong = X_field / 2;
         Y_Pong = Y_field / 2;
-        Pong_Cursor = (Turn?6:2);
+        Pong_Cursor = (Turn?2:6);
     }
     //Downer Wall
     else if(Y_Pong >= Y_field - 1)
@@ -165,8 +173,8 @@ int main()
         wrefresh(win);
         getch();
         erase();
-        mvaddstr(Y_field / 2,3,"1Player use A & D");
-        mvaddstr(Y_field / 2 + 1,3,"2Player use J & L");
+        mvaddstr(Y_field / 2,3,"1 Player use A & D");
+        mvaddstr(Y_field / 2 + 1,3,"2 Player use J & L");
         wrefresh(win);
         getch();
         erase();
@@ -199,8 +207,8 @@ int main()
 
         mvaddstr(1,X_field / 2 - 1,(Turn?"1P":"2P"));//Display Now Player
 
-        mvaddstr(2,Y_field / 4,Score_2_char);//Display Score
-        mvaddstr(2,(Y_field / 4)*3,Score_1_char);
+        mvaddstr(2,X_field / 4,Score_2_char);//Display Score
+        mvaddstr(2,(X_field / 4)*3,Score_1_char);
 
 
 
@@ -231,17 +239,29 @@ int main()
         mvaddch(Y2Bar    ,X2Bar,'|');
         mvaddch(Y2Bar + 1,X2Bar,'|');
 
-        if(Game)//Game Over
-        {
-            erase();
+        
+        wrefresh(win);
 
-            mvaddstr(Y_field / 2,X_field / 2 - 5,"Game Over");
+        if((Score_2 == WinPoint)||(Score_1 == WinPoint))
+        {
+            
+            erase();
             timeout(-1);
+            
+            if(Score_1 = WinPoint)
+                Winner = 1;
+            else 
+                Winner = 2;
+
+            mvaddstr(Y_field / 2,3,(Winner == 1 ? "1P WIN \n Congrats" : "2P WIN \n Congrats"));
             getch();
             break;
-        }
+        }   
 
-        wrefresh(win);
+
+
+
+
     }
 
     wclear(win);
