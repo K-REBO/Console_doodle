@@ -1,5 +1,4 @@
 #include<ncurses.h>
-#include<unistd.h>
 using namespace std;
 
 #define  X_field (40)//四で割れる
