@@ -1,4 +1,5 @@
 #include<ncurses.h>
+#include<unistd.h>
 using namespace std;
 
 #define  X_field (40)//四で割れる
@@ -166,14 +167,21 @@ int main()
     noecho();
     cbreak();
     
+
+    //Display Field
+        mvaddch(0,0,'+');
+        mvaddch(0,X_field,'+');
+        mvaddch(Y_field,0,'+');
+        mvaddch(Y_field,X_field,'+');
+    //END
     
     //First Message
-        mvaddstr(Y_field / 2,3,"Wellcome 2 Pong ");
+        mvaddstr(Y_field / 2,X_field / 2 - 7,"Wellcome 2 Pong");
         wrefresh(win);
         getch();
-        erase();
-        mvaddstr(Y_field / 2,3,"1 Player use A & D");
-        mvaddstr(Y_field / 2 + 1,3,"2 Player use J & L");
+    
+        mvaddstr(Y_field / 2,X_field / 2 - 7,"1 Player use A & D");
+        mvaddstr(Y_field / 2 + 1,X_field / 2 - 7,"2 Player use J & L");
         wrefresh(win);
         getch();
         erase();
@@ -256,11 +264,6 @@ int main()
             getch();
             break;
         }   
-
-
-
-
-
     }
 
     wclear(win);
