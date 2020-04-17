@@ -4,3 +4,5 @@ Console old Games
 ## une carte
 * Mine Sweeper  
 * Pong(solo)
+* Pong(Duo)
+* Dino
