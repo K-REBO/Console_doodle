@@ -2,8 +2,15 @@
 #include<vector>
 using namespace std;
 
-#define X_field (12)
-#define Y_field (12)
+
+enum
+{
+        Up,
+    Le, Nn, Ri,
+        Dw,
+};
+
+
 
 struct Actor
 {
@@ -12,4 +19,23 @@ struct Actor
     int Y;
     int Cursor;
     int State;
+};
+
+
+
+
+
+#define X_field (12)
+#define Y_field (12)
+
+
+
+
+
+
+
+
+int main()
+{
+
 }
