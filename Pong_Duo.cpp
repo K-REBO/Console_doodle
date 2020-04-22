@@ -105,9 +105,9 @@ void PongCD()//Collid Detection Pong and wall and Bar
     else if((Y_Pong == Y1Bar + 1)&&(X_Pong == X1Bar + 1))
         switch(Pong_Cursor)
         {
-            case DL:Pong_Cursor = UR;break;
-            case Le:Pong_Cursor = UR;break;
-            case UL:Pong_Cursor = Ri;break;
+            case DL:Pong_Cursor = Ri;break;
+            case Le:Pong_Cursor = DR;break;
+            case UL:Pong_Cursor = DR;break;
             default:                 break;
         }
     // 1Bar Middle
@@ -123,18 +123,22 @@ void PongCD()//Collid Detection Pong and wall and Bar
     else if((Y_Pong == Y1Bar - 1)&&(X_Pong == X1Bar + 1))
         switch (Pong_Cursor)
         {
-            case DL:Pong_Cursor = Ri;break;
-            case Le:Pong_Cursor = DR;break;
-            case UL:Pong_Cursor = DR;break;
+
+			case DL:Pong_Cursor = UR;break;
+            case Le:Pong_Cursor = UR;break;
+            case UL:Pong_Cursor = Ri;break;
             default:                 break;
+
+
+            
         }
     // 2Bar Upper
     else if((Y_Pong == Y2Bar + 1)&&(X_Pong == X2Bar - 1))
         switch (Pong_Cursor)
         {
-            case DR:Pong_Cursor = UL;break;
-            case Ri:Pong_Cursor = UL;break;
-            case UR:Pong_Cursor = Le;break;
+            case DR:Pong_Cursor = Le;break;
+            case Ri:Pong_Cursor = DL;break;
+            case UR:Pong_Cursor = DL;break;
             default:                 break;
         }
     // 2Bar Middle
@@ -150,10 +154,14 @@ void PongCD()//Collid Detection Pong and wall and Bar
     else if((Y_Pong == Y2Bar - 1)&&(X_Pong == X2Bar - 1))
         switch (Pong_Cursor)
         {
-            case DR:Pong_Cursor = Le;break;
-            case Ri:Pong_Cursor = DL;break;
-            case UR:Pong_Cursor = DL;break;
-            default:                 break;
+
+			case DR:Pong_Cursor = UL;break;
+            case Ri:Pong_Cursor = UL;break;
+            case UR:Pong_Cursor = Le;break;
+            default:                 break;	
+
+
+            
         }
 }
 
