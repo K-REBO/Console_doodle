@@ -162,15 +162,14 @@ fn main() {
             erase();
             timeout(-1);
 
-
-            mvprintw(Y_FIELD / 2 - 1,X_FIELD / 2 - 3, {
+            mvprintw(Y_FIELD / 2 - 1, X_FIELD / 2 - 3, {
                 if bar1.score == WIN_POINT {
                     "1P WIN"
                 } else {
                     "2P WIN"
                 }
             });
-            mvprintw(Y_FIELD / 2 + 1,X_FIELD / 2 - 4,"Congrats");
+            mvprintw(Y_FIELD / 2 + 1, X_FIELD / 2 - 4, "Congrats");
 
             getch();
             break ();
