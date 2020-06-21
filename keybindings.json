@@ -112,5 +112,15 @@
         "key": "right",
         "command": "-cursorRight",
         "when": "textInputFocus"
+    },
+    {
+        "key": "ctrl+i",
+        "command": "deleteLeft",
+        "when": "textInputFocus"
+    },
+    {
+        "key": "backspace",
+        "command": "deleteLeft",
+        "when": "textInputFocus"
     }
 ]
