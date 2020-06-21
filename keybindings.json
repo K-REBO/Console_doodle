@@ -170,5 +170,25 @@
     {
         "key": "ctrl+shift+p",
         "command": "-workbench.action.showCommands"
+    },
+    {
+        "key": "alt+f",
+        "command": "cursorWordEndRight",
+        "when": "textInputFocus"
+    },
+    {
+        "key": "ctrl+right",
+        "command": "cursorWordEndRight",
+        "when": "textInputFocus"
+    },
+    {
+        "key": "alt+b",
+        "command": "cursorWordStartLeft",
+        "when": "textInputFocus"
+    },
+    {
+        "key": "ctrl+left",
+        "command": "cursorWordStartLeft",
+        "when": "textInputFocus"
     }
 ]
