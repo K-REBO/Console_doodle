@@ -1,0 +1,28 @@
+{
+    "editor.columnSelection": true,
+    "terminal.integrated.minimumContrastRatio": 5,
+    "editor.minimap.enabled": false,
+    "workbench.panel.defaultLocation": "left",
+    "terminal.external.linuxExec": "x-terminal-emulatofn ",
+    "terminal.explorerKind": "external",
+    "files.saveConflictResolution": "overwriteFileOnDisk",
+    "window.zoomLevel": 0,
+    "files.autoSave": "afterDelay",
+    "zenMode.hideLineNumbers": false,
+    "workbench.colorTheme": "Solarized Dark",
+    "workbench.iconTheme": "vs-minimal",
+    "C_Cpp.commentContinuationPatterns": [
+        "/**"
+    ],
+    "editor.tokenColorCustomizations": {
+        "comments": "#3ea250"
+    },
+    "editor.insertSpaces": false,
+    "editor.renderWhitespace": "boundary",
+    "window.customMenuBarAltFocus": false,
+    "window.enableMenuBarMnemonics": false,
+    "window.menuBarVisibility": "hidden",
+    "sync.gist": "VScode Settings Sync",
+    "sync.autoUpload": true
+
+}
