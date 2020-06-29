@@ -23,6 +23,7 @@
     "window.enableMenuBarMnemonics": false,
     "window.menuBarVisibility": "hidden",
     "sync.gist": "VScode Settings Sync",
-    "sync.autoUpload": true
+    "sync.autoUpload": true,
+    "window.titleBarStyle": "custom"
 
 }
