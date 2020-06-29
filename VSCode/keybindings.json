@@ -87,7 +87,7 @@
     },
     {
         "key": "up",
-        "command": "-selectPrevSuggestion",
+        "command": "selectPrevSuggestion",
         "when": "suggestWidgetMultipleSuggestions && suggestWidgetVisible && textInputFocus"
     },
     {
@@ -97,7 +97,7 @@
     },
     {
         "key": "down",
-        "command": "-selectNextSuggestion",
+        "command": "selectNextSuggestion",
         "when": "suggestWidgetMultipleSuggestions && suggestWidgetVisible && textInputFocus"
     },
     {
@@ -190,26 +190,5 @@
         "key": "ctrl+left",
         "command": "cursorWordStartLeft",
         "when": "textInputFocus"
-    },
-    {
-        "key": "ctrl+alt+n",
-        "command": "editor.action.moveLinesDownAction",
-        "when": "editorTextFocus && !editorReadonly"
-    },
-    {
-        "key": "alt+down",
-        "command": "editor.action.moveLinesDownAction",
-        "when": "editorTextFocus && !editorReadonly"
-    },
-    {
-        "key": "ctrl+alt+p",
-        "command": "editor.action.moveLinesUpAction",
-        "when": "editorTextFocus && !editorReadonly"
-    },
-    {
-        "key": "alt+up",
-        "command": "editor.action.moveLinesUpAction",
-        "when": "editorTextFocus && !editorReadonly"
     }
 ]
-
