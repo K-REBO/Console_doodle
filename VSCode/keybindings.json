@@ -61,7 +61,7 @@
         "when": "textInputFocus"
     },
     {
-        "key": "ctrl+x h",
+        "key": "ctrl+k h",
         "command": "editor.action.selectAll",
         "when": "textInputFocus"
     },
@@ -101,7 +101,7 @@
         "when": "suggestWidgetMultipleSuggestions && suggestWidgetVisible && textInputFocus"
     },
     {
-        "key": "ctrl+x f",
+        "key": "ctrl+k f",
         "command": "actions.find"
     },
     {
@@ -164,7 +164,7 @@
         "when": "editorColumnSelection && textInputFocus"
     },
     {
-        "key": "ctrl+x p",
+        "key": "ctrl+k p",
         "command": "workbench.action.showCommands"
     },
     {
