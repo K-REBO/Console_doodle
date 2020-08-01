@@ -101,7 +101,7 @@
         "when": "suggestWidgetMultipleSuggestions && suggestWidgetVisible && textInputFocus"
     },
     {
-        "key": "ctrl+k f",
+        "key": "ctrl+k s",
         "command": "actions.find"
     },
     {
